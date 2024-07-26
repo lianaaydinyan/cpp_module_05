@@ -25,15 +25,15 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade ) : name_(name)
 {
 
 	if ( grade < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (grade > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 	grade_ = grade;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	// destructor
+	std::cout << "Default destrcutor >_< " << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& obj) : name_(obj.name_)
@@ -63,23 +63,30 @@ int			Bureaucrat::get_grade() const
 
 void			Bureaucrat::decrement_g()
 {
-	if (grade_ - 1 >= 1)
-		grade_--;
+	if (grade_ - 1 < 1)
+		throw Bureaucrat::GradeTooHighException();
 	else
-		throw Bureaucrat::GradeTooLowException();
+		grade_--;
 }
 void			Bureaucrat::increment_g()
 {
-	if (grade_ + 1 <= 150)
-		grade_++;
+	if (grade_ + 1 > 150)
+		throw Bureaucrat::GradeTooLowException();
 	else
-		throw Bureaucrat::GradeTooHighException();
+		grade_++;
 }
 
-void	Bureaucrat::signForm(Form obj)
+
+void	Bureaucrat::signForm(Form& obj)
 {
-	if (obj.get_status())
+	// exeptionY petqa te voch ?
+	try
+	{
+		obj.beSigned(*this);
 		std::cout << get_name() << " signed " << obj.get_name() << std::endl;
-	else
+	}
+	catch(const std::exception& e)
+	{
 		std::cout << get_name() << " couldn't sign " << obj.get_name() << " becouse " << " ??   " << std::endl;
+	}
 }

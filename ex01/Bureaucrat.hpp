@@ -32,7 +32,7 @@ class Bureaucrat
 		void				decrement_g(); // ++grade_
 		void				increment_g(); // --grade_
 		// for Form
-		void	signForm(Form obj);
+		void	signForm(Form& obj);
 
 };
 

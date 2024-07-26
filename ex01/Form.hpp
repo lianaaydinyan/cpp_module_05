@@ -5,6 +5,7 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 	private:
@@ -13,15 +14,26 @@ class Form
 		const int			grade_sign_;
 		const int			grade_exec_;
 	public:
-		Form(const std::string name, const int grade_exec, const int grade_sign) ;
-		void		beSigned(Bureaucrat obj) ;
-		std::string get_name( void ) const;
-		int			get_grade_s( void ) const;
-		int			get_grade_e( void ) const;
-		bool		get_status( void ) const;
+		Form(); // done
+		~Form(); // done
+		Form& operator=(Form &copy); // ?
+		Form(Form& obj); // ?
+		Form(const std::string name, const int grade_exec, const int grade_sign) ; // done 
+		const std::string&	get_name( void ) const; // done
+		const int&			get_grade_s( void ) const; // done 
+		bool&				get_status( void ) const; // done 
+		const int&			get_grade_e( void ) const; // done
+		void				beSigned(Bureaucrat& obj) ; // ?
+        class GradeTooHighException
+        {
+            virtual const char* what() const throw(); // done
+        };
+        class GradeTooLowException
+        {
+            virtual const char* what() const throw(); // done
+        };
 };
 
-std::ostream& operator<<(std::ostream o, const Form obj);
-
+std::ostream& operator<<(std::ostream o, Form& obj);
 
 #endif
