@@ -25,6 +25,7 @@ class Bureaucrat
 				const char* what() const throw();
 		};
 		Bureaucrat(const Bureaucrat& obj);
+        void	executeForm(Form const &form);
 		Bureaucrat& operator=(const Bureaucrat& obj);
 		const std::string	get_name() const;
 		int					get_grade() const;

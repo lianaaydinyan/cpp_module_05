@@ -77,6 +77,11 @@ bool& Form::get_status()
 	return is_signed_;
 }
 
+virtual void execute(Bureaucrat const & executor) const 
+{
+    
+}
+
 std::ostream& operator<<(std::ostream& oo, Form& obj)
 {
 	oo << obj.get_name() << " Form have " << obj.get_status() << " state ^_^ " << std::endl;

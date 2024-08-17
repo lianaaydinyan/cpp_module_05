@@ -77,6 +77,17 @@ void			Bureaucrat::increment_g()
 		this->grade_++;
 }
 
+void	Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->_name << " cannot execute " << form.getName() << " because: " << e.what() << std::endl;
+	}
+}
 
 void	Bureaucrat::signForm(Form& obj)
 {
