@@ -35,16 +35,17 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 const std::string& RobotomyRequestForm::getTarget() const
 {
-
+    return target;
 }
 
 void    PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-
+    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+        throw DoesItSign();
     std::cout << "Brrrr... Rrrrr... Rrrrr..." << std::end;
     if (generateRandomBool())
-        std::cout << "Robotomy " << this->get_name() <<  "has been robotomized >_< " << std::endl;
+        std::cout << "Robotomy " << this->target <<  "has been robotomized >_< " << std::endl;
     else
-        std::cout << "Robotomy " << this->get_name() <<  "failed ^_^ " << std::endl;
+        std::cout << "Robotomy " << this->target <<  "failed ^_^ " << std::endl;
 
 }

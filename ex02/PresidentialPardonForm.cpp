@@ -22,10 +22,15 @@ PresidentialPardonForm::PresidentialPardonForm& PresidentialPardonForm(const Pre
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    /// need to complete     
+    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+        throw DoesItSign();
+     std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std:e:endl;
 }
 
 const std::string& PresidentialPardonForm::getTarget() const
+{
+    return this->target;
+}
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
