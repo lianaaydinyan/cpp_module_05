@@ -3,13 +3,26 @@
 
 
 #include "Form.hpp"
-class RobotomyRequestForm : public Form
+class RobotomyRequestForm : public AForm
 {
-    public:
+    private:
+        const std::string target;
         RobotomyRequestForm();
-        ~RobotomyRequestForm();
+    public:
+        RobotomyRequestForm(const std::string& str);
+        class DoesItSign : public std::exception
+        {
+			public:
+				const char* what() const throw();
+        };
+        const std::string& getTarget() const;
+        void execute(Bureaucrat const & executor) const override;  
         RobotomyRequestForm(RobotomyRequestForm& copy);
         RobotomyRequestForm& operator=(RobotomyRequestForm& copy);
+        ~RobotomyRequestForm();
 };
+
+
+bool generateRandomBool();
 
 #endif // Robotomy

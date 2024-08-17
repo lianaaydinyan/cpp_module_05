@@ -1,17 +1,26 @@
-#ifndef Presidential
-#define Presidential
 
+#ifndef PresidentialPardonForm_
+#define PresidentialPardonForm_
 
 #include "Form.hpp"
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public AForm
 {
+    private:
+        const std::string target;
+        PresidentialPardonForm();
     public:
-        // Ortodox
-        ShrubberyCreationForm();
-        ~ShrubberyCreationForm(); 
-        ShrubberyCreationForm(ShrubberyCreationForm& copy);
-        ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy);                  
-};
+        PresidentialPardonForm(const std::string& str);
+        class DoesItSign : public std::exception
+        {
+			public:
+				const char* what() const throw();
+        };
+        const std::string& getTarget() const;
+        void execute(Bureaucrat const & executor) const override;
+        PresidentialPardonForm(const PresidentialPardonForm& obj);
+        PresidentialPardonForm& PresidentialPardonForm(const PresidentialPardonForm& obj);
+        ~PresidentialPardonForm();
+}
 
+#endif // PresidentialPardonForm_
 
-#endif // Presidential

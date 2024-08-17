@@ -1,8 +1,27 @@
-#ifndef Shrubbery
-#define Shrubbery
+#ifndef ShrubberyCreationForm_
+#define ShrubberyCreationForm_
+
 
 #include "Form.hpp"
-class PresidentialPardonForm : public Form
+class ShrubberyCreationForm : public AForm
+{
+    private:
+        const std::string target;
+        ShrubberyCreationForm();
+    public:
+        ShrubberyCreationForm(const std::string& str);
+        class DoesItSign : public std::exception
+        {
+			public:
+				const char* what() const throw();
+        };
+        const std::string& getTarget() const;
+        void execute(Bureaucrat const & executor) const override;
+        ShrubberyCreationForm(ShrubberyCreationForm& copy);
+        ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy);                  
+        ~ShrubberyCreationForm(); 
+};
 
 
-#endif // Shrubbery
+#endif // ShrubberyCreationForm_
+
