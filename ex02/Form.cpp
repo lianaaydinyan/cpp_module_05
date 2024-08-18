@@ -36,17 +36,18 @@ AForm::AForm() : name_("default") , is_signed_(false) , grade_sign_(77), grade_e
 	std::cout << "Default AForm constructor called " << std::endl;
 }
 
-AForm::AForm(const std::string name, const int grade_exec, const int grade_sign) : name_(name) , is_signed_(false) ,grade_exec_(grade_exec) , grade_sign_(grade_sign)
+
+AForm::AForm(const std::string& name, const int grade_exec, const int grade_sign) :  name_(name), is_signed_(false) , grade_sign_(grade_sign),  grade_exec_(grade_exec)
 {
 	// checking
 	if (grade_exec < 1 )
-		throw AForm::GradeTooHighException();
+		throw GradeTooHighException();
 	else if (grade_exec > 150 )
-		throw AForm::GradeTooLowException();
+		throw GradeTooLowException();
 	if (grade_sign < 1)
-		throw AForm::GradeTooHighException();
+		throw GradeTooHighException();
 	else if ( grade_sign > 150)
-		throw AForm::GradeTooHighException();
+		throw GradeTooHighException();
 	std::cout << "Parametrized AForm constructor called " << std::endl;
 }
 
