@@ -42,10 +42,10 @@ void    PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
     if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
         throw DoesItSign();
-    std::cout << "Brrrr... Rrrrr... Rrrrr..." << std::end;
+    std::cout << "Brrrr... Rrrrr... Rrrrr..." << std::endl;
     if (generateRandomBool())
-        std::cout << "Robotomy " << this->target <<  "has been robotomized >_< " << std::endl;
+        std::cout << "Robotomy " << getTarget() <<  "has been robotomized >_< " << std::endl;
     else
-        std::cout << "Robotomy " << this->target <<  "failed ^_^ " << std::endl;
+        std::cout << "Robotomy " << getTarget() <<  "failed ^_^ " << std::endl;
 
 }

@@ -18,7 +18,7 @@ class PresidentialPardonForm : public AForm
         const std::string& getTarget() const;
         void execute(Bureaucrat const & executor) const override;
         PresidentialPardonForm(const PresidentialPardonForm& obj);
-        PresidentialPardonForm& PresidentialPardonForm(const PresidentialPardonForm& obj);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
         ~PresidentialPardonForm();
 }
 

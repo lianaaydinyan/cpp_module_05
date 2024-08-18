@@ -14,7 +14,7 @@ const char*  PresidentialPardonForm::DoesItSign::what() const throw()
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& obj) : AForm(obj)
 {}
 
-PresidentialPardonForm::PresidentialPardonForm& PresidentialPardonForm(const PresidentialPardonForm& obj)
+PresidentialPardonForm::PresidentialPardonForm& operator=(const PresidentialPardonForm& obj)
 {
     AForm::operator=(obj);
     return *this;

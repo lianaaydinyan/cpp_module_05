@@ -14,7 +14,7 @@ const char*  PresidentialPardonForm::DoesItSign::what() const throw()
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& obj) : AForm(obj)
 {}
 
-PresidentialPardonForm::PresidentialPardonForm& PresidentialPardonForm(const PresidentialPardonForm& obj)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& obj)
 {
     AForm::operator=(obj);
     return *this;
@@ -22,9 +22,9 @@ PresidentialPardonForm::PresidentialPardonForm& PresidentialPardonForm(const Pre
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+    if ((executor.get_grade() > this->get_grade_s()) || !this->get_status())
         throw DoesItSign();
-     std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std:e:endl;
+     std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
 const std::string& PresidentialPardonForm::getTarget() const

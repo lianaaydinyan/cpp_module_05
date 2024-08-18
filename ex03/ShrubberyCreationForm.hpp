@@ -1,7 +1,8 @@
 #ifndef ShrubberyCreationForm_
 #define ShrubberyCreationForm_
 
-
+#include <fstream>
+#include <stdexcept>
 #include "Form.hpp"
 class ShrubberyCreationForm : public AForm
 {

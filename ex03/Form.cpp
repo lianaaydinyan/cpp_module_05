@@ -77,7 +77,7 @@ bool& AForm::get_status()
 	return is_signed_;
 }
 
-virtual void execute(Bureaucrat const & executor) const 
+void AForm::execute(Bureaucrat const & executor) const 
 {
     
 }

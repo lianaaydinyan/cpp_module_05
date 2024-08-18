@@ -28,8 +28,8 @@ const std::string&  ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    std::ostream file;
-    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+    std::fstream file;
+    if ((executor.get_grade() > this->get_grade_s()) || !this->get_status())
         throw DoesItSign();
     file.open(this->target + "_shrubbery");
     if (!file)

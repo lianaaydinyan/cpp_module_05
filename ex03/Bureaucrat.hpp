@@ -25,7 +25,7 @@ class Bureaucrat
 				const char* what() const throw();
 		};
 		Bureaucrat(const Bureaucrat& obj);
-        void	executeForm(AForm const &form);
+        // void	executeForm(AForm const &form);
 		Bureaucrat& operator=(const Bureaucrat& obj);
 		const std::string	get_name() const;
 		int					get_grade() const;
@@ -34,7 +34,7 @@ class Bureaucrat
 		// for Form
 		void	signForm(AForm& obj);
 		// for execute
-		void executeForm(Form const & form);
+		void executeForm(AForm const & form);
 
 };
 
