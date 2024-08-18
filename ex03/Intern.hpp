@@ -28,18 +28,3 @@ class Intern
 
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif

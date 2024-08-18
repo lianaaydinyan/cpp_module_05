@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 
 
-Intern::Intern() : form_count{3} {}
+Intern::Intern() : form_count(3) {}
 
 const char* Intern::internship::what() const throw()
 {
