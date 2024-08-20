@@ -14,6 +14,8 @@ class Bureaucrat
 		Bureaucrat(const std::string& name);
 		Bureaucrat(const std::string& name , int grade);
 		~Bureaucrat();
+		Bureaucrat(const Bureaucrat& obj);
+		Bureaucrat& operator=(const Bureaucrat& obj);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -24,8 +26,6 @@ class Bureaucrat
 			public:
 				const char* what() const throw();
 		};
-		Bureaucrat(const Bureaucrat& obj);
-		Bureaucrat& operator=(const Bureaucrat& obj);
 		const std::string	get_name() const;
 		int					get_grade() const;
 		void				decrement_g(); // ++grade_

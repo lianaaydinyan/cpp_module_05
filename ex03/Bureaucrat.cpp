@@ -34,7 +34,7 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade ) : name_(name)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Default destrcutor >_< " << std::endl;
+	// std::cout << "Default destrcutor >_< " << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& obj) : name_(obj.name_)
@@ -57,7 +57,7 @@ const std::string	Bureaucrat::get_name() const
 	return this->name_;
 }
 
-int			Bureaucrat::get_grade() const
+const int			Bureaucrat::get_grade() const
 {
 	return grade_;
 }
@@ -82,10 +82,11 @@ void	Bureaucrat::executeForm(AForm const &form)
 	try
 	{
 		form.execute(*this);
+		std::cout << this->get_name() << " executed " << form.get_namee();
 	}
 	catch (std::exception &e)
 	{
-		std::cout << this->name_ << " cannot execute " << form.get_name() << " because: " << e.what() << std::endl;
+		std::cout << this->name_ << " cannot execute " << form.get_namee() << " because: " << e.what() << std::endl;
 	}
 }
 
@@ -95,10 +96,10 @@ void	Bureaucrat::signForm(AForm& obj)
 	try
 	{
 		obj.beSigned(*this);
-		std::cout << get_name() << " signed " << obj.get_name() << std::endl;
+		std::cout << get_name() << " signed " << obj.get_namee() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << get_name() << " couldn't sign " << obj.get_name() << " becouse " << e.what() << std::endl;
+		std::cout << get_name() << " couldn't sign " << obj.get_namee() << " becouse " << e.what() << std::endl;
 	}
 }

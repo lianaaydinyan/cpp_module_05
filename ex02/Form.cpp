@@ -1,13 +1,13 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-AForm& AForm::operator=(AForm &copy) // ?
+AForm& AForm::operator=(const AForm &copy) // ?
 {
 	this->is_signed_ = copy.is_signed_;
 	return *this;
 }
 
-AForm::AForm(AForm& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_exec_(obj.grade_exec_) , grade_sign_(obj.grade_sign_)
+AForm::AForm(const AForm& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_exec_(obj.grade_exec_) , grade_sign_(obj.grade_sign_)
 {
 }
 
@@ -73,15 +73,11 @@ const int& AForm::get_grade_s() const
 	return this->grade_sign_;
 }
 
-bool& AForm::get_status() 
+bool AForm::get_status() const
 {
 	return is_signed_;
 }
 
-virtual void execute(Bureaucrat const & executor) const 
-{
-    
-}
 
 std::ostream& operator<<(std::ostream& oo, AForm& obj)
 {

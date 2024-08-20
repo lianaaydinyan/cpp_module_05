@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& str) : AForm("Roboto
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm& copy) : AForm(copy)
 {}
 
-RobotomyRequestForm::RobotomyRequestForm& operator=(RobotomyRequestForm& copy)
+RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& copy)
 {
     AForm::operator=(copy);
     return *this;
@@ -33,19 +33,20 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
     // destrcutor
 }
+
 const std::string& RobotomyRequestForm::getTarget() const
 {
     return target;
 }
-
-void    PresidentialPardonForm::execute(Bureaucrat const & executor) const
+ 
+void    RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
-    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+    if (!this->get_status() || (executor.get_grade() > this->get_grade_s()))
         throw DoesItSign();
     std::cout << "Brrrr... Rrrrr... Rrrrr..." << std::endl;
     if (generateRandomBool())
-        std::cout << "Robotomy " << getTarget() <<  "has been robotomized >_< " << std::endl;
+        std::cout << "Robotomy " << this->getTarget() <<  "has been robotomized >_< " << std::endl;
     else
-        std::cout << "Robotomy " << getTarget() <<  "failed ^_^ " << std::endl;
+        std::cout << "Robotomy " << this->getTarget() <<  "failed ^_^ " << std::endl;
 
 }

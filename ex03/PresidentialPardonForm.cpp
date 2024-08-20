@@ -1,6 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::() : AForm("PresidentialPardonForm", 5, 25) , target("<target>")
+
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 5, 25) , target("<target>")
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& str) : AForm("PresidentialPardonForm", 5, 25) , target(str)
@@ -22,7 +23,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if ((executor.get_grade() > this->get_grade_s()) || !this->get_status())
+    if (!this->get_status() || (executor.get_grade() > this->get_grade_s()))
         throw DoesItSign();
      std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

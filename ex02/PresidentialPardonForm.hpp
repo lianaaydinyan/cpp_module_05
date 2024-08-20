@@ -1,8 +1,9 @@
-
 #ifndef PresidentialPardonForm_
 #define PresidentialPardonForm_
 
 #include "Form.hpp"
+class AForm;
+
 class PresidentialPardonForm : public AForm
 {
     private:
@@ -16,11 +17,11 @@ class PresidentialPardonForm : public AForm
 				const char* what() const throw();
         };
         const std::string& getTarget() const;
-        void execute(Bureaucrat const & executor) const override;
+        virtual void execute(Bureaucrat const & executor) const;
         PresidentialPardonForm(const PresidentialPardonForm& obj);
         PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
         ~PresidentialPardonForm();
-}
+};
 
 #endif // PresidentialPardonForm_
 

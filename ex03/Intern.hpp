@@ -11,8 +11,7 @@ class AForm;
 class Intern
 {
     private:
-        const int form_count;
-        AForm* forms[form_count];
+        AForm* forms[3];
     public:
     class internship : public std::exception
     {

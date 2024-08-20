@@ -25,19 +25,18 @@ class Bureaucrat
 				const char* what() const throw();
 		};
 		Bureaucrat(const Bureaucrat& obj);
-        void	executeForm(AForm const &form);
 		Bureaucrat& operator=(const Bureaucrat& obj);
 		const std::string	get_name() const;
-		int					get_grade() const;
+		const int					get_grade() const;
 		void				decrement_g(); // ++grade_
 		void				increment_g(); // --grade_
 		// for Form
 		void	signForm(AForm& obj);
 		// for execute
-		void executeForm(Form const & form);
+		void executeForm(AForm const & form);
 
 };
 
-std::ostream& operator<<(std::ostream o, const Bureaucrat obj);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat obj);
 
 #endif // Bureaucrat_hpp

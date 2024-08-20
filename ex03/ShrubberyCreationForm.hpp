@@ -1,9 +1,11 @@
 #ifndef ShrubberyCreationForm_
 #define ShrubberyCreationForm_
 
+
 #include <fstream>
 #include <stdexcept>
 #include "Form.hpp"
+class AForm;
 class ShrubberyCreationForm : public AForm
 {
     private:
@@ -17,7 +19,7 @@ class ShrubberyCreationForm : public AForm
 				const char* what() const throw();
         };
         const std::string& getTarget() const;
-        void execute(Bureaucrat const & executor) const override;
+        virtual void execute(Bureaucrat const & executor) const;
         ShrubberyCreationForm(ShrubberyCreationForm& copy);
         ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy);                  
         ~ShrubberyCreationForm(); 

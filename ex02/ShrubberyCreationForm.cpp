@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& str) : AForm("Sh
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& copy) : AForm(copy)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& copy)
 {
     AForm::operator=(copy);
     return *this;
@@ -28,8 +28,8 @@ const std::string&  ShrubberyCreationForm::getTarget() const
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    std::ostream file;
-    if ((executor.get_grade() > this->get_grade_s()) || !this->is_signed_())
+    std::fstream file;
+    if (!this->get_status() || (executor.get_grade() > this->get_grade_s()))
         throw DoesItSign();
     file.open(this->target + "_shrubbery");
     if (!file)

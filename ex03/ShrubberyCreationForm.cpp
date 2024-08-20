@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& str) : AForm("Sh
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm& copy) : AForm(copy)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy)
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& copy)
 {
     AForm::operator=(copy);
     return *this;
@@ -29,25 +29,26 @@ const std::string&  ShrubberyCreationForm::getTarget() const
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     std::fstream file;
-    if ((executor.get_grade() > this->get_grade_s()) || !this->get_status())
+    if (!this->get_status() || (executor.get_grade() > this->get_grade_s()))
         throw DoesItSign();
-    file.open(this->target + "_shrubbery");
+    std::string file_name = this->target +  "_shrubbery";
+    file.open(file_name,std::ios::out);
     if (!file)
         throw std::runtime_error("Cant open file");
-    file << "            ***              ";
-    file << "         *********           ";
-    file << "      ***************        ";
-    file << "   *********************     ";
-    file << " *************************   ";
-    file << "***************************  ";
-    file << "    *****************        ";
-    file << "         ********            ";
-    file << "            | |              ";
-    file << "            | |              ";
-    file << "            | |              ";
-    file << "            | |              ";
-    file << "            | |              ";
-    file << "_____________________________";
+    file << "            ***              \n";
+    file << "         *********           \n";
+    file << "      ***************        \n";
+    file << "   *********************     \n";
+    file << " *************************   \n";
+    file << "***************************  \n";
+    file << "    *****************        \n";
+    file << "         ********            \n";
+    file << "            | |              \n";
+    file << "            | |              \n";
+    file << "            | |              \n";
+    file << "            | |              \n";
+    file << "            | |              \n";
+    file << "_____________________________\n";
     file.close();
 }
 

@@ -1,8 +1,12 @@
 #ifndef Robotomy
 #define Robotomy
 
-
+#include <cstdlib>
+#include <ctime>
 #include "Form.hpp"
+class AForm;
+bool generateRandomBool();
+
 class RobotomyRequestForm : public AForm
 {
     private:
@@ -16,13 +20,10 @@ class RobotomyRequestForm : public AForm
 				const char* what() const throw();
         };
         const std::string& getTarget() const;
-        void execute(Bureaucrat const & executor) const override;  
+        virtual void execute(Bureaucrat const & executor) const;  
         RobotomyRequestForm(RobotomyRequestForm& copy);
         RobotomyRequestForm& operator=(RobotomyRequestForm& copy);
         ~RobotomyRequestForm();
 };
-
-
-bool generateRandomBool();
 
 #endif // Robotomy

@@ -1,20 +1,27 @@
+#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
-
-int main(void)
+int main()
 {
-	try
-	{
-		Intern intern1;
-		AForm *my_form;
+    // {
+    // Intern someRandomIntern;
+    // AForm* rrf;
+    // rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");  
+    // }
 
-		my_form = intern1.makeForm("RobotomyRequestForm", "chlp");
-		std::cout << my_form->getTarget() << std::endl;
-
-		std::cout << *my_form << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (0);
+    Bureaucrat chlp("document", 3);
+    std::cout << chlp.get_name() << std::endl;
+    ShrubberyCreationForm form1(chlp.get_name());
+    chlp.signForm(form1);
+    try
+    {
+        form1.execute(chlp);
+    }
+    catch(std::exception& exp)
+    {
+        std::cout << exp.what() << std::endl;
+    }
+    return 0;
 }
