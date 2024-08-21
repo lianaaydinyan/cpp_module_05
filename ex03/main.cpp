@@ -3,13 +3,14 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
+
 int main()
 {
-    // {
-    // Intern someRandomIntern;
-    // AForm* rrf;
-    // rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");  
-    // }
+    {
+    Intern someRandomIntern;
+    AForm* rrf;
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");  
+    }
 
     Bureaucrat chlp("document", 3);
     std::cout << chlp.get_name() << std::endl;

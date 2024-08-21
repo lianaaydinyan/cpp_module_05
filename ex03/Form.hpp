@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 class Bureaucrat;
+
 class AForm
 {
 	private:
@@ -34,5 +35,4 @@ class AForm
 };
 
 std::ostream& operator<<(std::ostream& oo, AForm& obj);
-
 #endif

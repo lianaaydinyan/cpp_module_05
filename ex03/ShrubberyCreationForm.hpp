@@ -6,6 +6,7 @@
 #include <stdexcept>
 #include "Form.hpp"
 class AForm;
+
 class ShrubberyCreationForm : public AForm
 {
     private:
@@ -24,7 +25,6 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm& operator=(ShrubberyCreationForm& copy);                  
         ~ShrubberyCreationForm(); 
 };
-
 
 #endif // ShrubberyCreationForm_
 

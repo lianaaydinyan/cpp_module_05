@@ -4,8 +4,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-
-
 class AForm;
 
 class Intern
@@ -24,6 +22,5 @@ class Intern
     Intern();
     ~Intern();
 };
-
 
 #endif

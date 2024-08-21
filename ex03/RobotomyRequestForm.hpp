@@ -4,7 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 #include "Form.hpp"
+bool generateRandomBool();
 class AForm;
+
 class RobotomyRequestForm : public AForm
 {
     private:
@@ -24,7 +26,5 @@ class RobotomyRequestForm : public AForm
         ~RobotomyRequestForm();
 };
 
-
-bool generateRandomBool();
 
 #endif // Robotomy
