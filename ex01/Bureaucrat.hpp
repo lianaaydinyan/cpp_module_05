@@ -10,7 +10,6 @@ class Bureaucrat
 		const std::string	name_;
 		int 				grade_;
 	public:
-		// e OrthodoxCanonical Form
 		Bureaucrat(const std::string& name);
 		Bureaucrat(const std::string& name , int grade);
 		~Bureaucrat();

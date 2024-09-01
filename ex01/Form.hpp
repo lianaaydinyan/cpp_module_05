@@ -13,8 +13,8 @@ class Form
 	public:
 		Form(); // done
 		~Form(); // done
-		Form& operator=(Form &copy); // ?
-		Form(Form& obj); // ?
+		Form& operator=(const Form &copy); // ?
+		Form(const Form& obj); // ?
 		Form(const std::string name, const int grade_exec, const int grade_sign) ; // done 
 		const std::string&	get_name( void ) const; // done
 		const int&			get_grade_s( void ) const; // done 

@@ -1,7 +1,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-AForm& AForm::operator=(const AForm &copy) // ?
+AForm& AForm::operator=(const AForm &copy) 
 {
 	this->is_signed_ = copy.is_signed_;
 	return *this;
@@ -11,7 +11,7 @@ AForm::AForm(const AForm& obj) : name_(obj.name_), is_signed_(obj.is_signed_), g
 {
 }
 
-void				AForm::beSigned(Bureaucrat& obj)  // ?
+void				AForm::beSigned(Bureaucrat& obj) 
 {
 	if (obj.get_grade() <= this->grade_sign_)
 	{

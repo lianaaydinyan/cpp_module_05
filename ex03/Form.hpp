@@ -14,8 +14,8 @@ class AForm
 		const int			grade_exec_;
 	public:
 		AForm(); // done
-		AForm& operator=(const AForm &copy); // ?
-		AForm(const AForm& obj); // ?
+		AForm& operator=(const AForm &copy);
+		AForm(const AForm& obj);
 		AForm(const std::string& name, const int grade_exec, const int grade_sign) ; // done 
 		const std::string&	get_namee( void ) const; // done
 		bool				get_status( void ) const; // done 

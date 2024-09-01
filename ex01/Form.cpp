@@ -1,14 +1,16 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form& Form::operator=(Form &copy) // ?
+Form& Form::operator=(const Form &copy) 
 {
 	this->is_signed_ = copy.is_signed_;
 	return *this;
 }
 
-Form::Form(Form& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_sign_(obj.grade_sign_), grade_exec_(obj.grade_exec_)
+Form::Form(const Form& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_sign_(obj.grade_sign_), grade_exec_(obj.grade_exec_)
 {
+	std::cout << "Copy constructor called" << std::endl;
+
 }
 
 void				Form::beSigned(Bureaucrat& obj)  // ?

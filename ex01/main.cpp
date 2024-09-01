@@ -21,8 +21,9 @@ int main()
     try
     {
         Form forma("Report", 99, 99);
-        obj1.signForm(forma);
-		std::cout << forma << std::endl;
+		Form forma2(forma);
+        obj1.signForm(forma2);
+		std::cout << forma2 << std::endl;
     }
     catch(const std::exception& e)
     {
