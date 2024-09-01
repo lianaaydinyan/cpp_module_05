@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = forms
 SRC = ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Form.cpp Bureaucrat.cpp main.cpp
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

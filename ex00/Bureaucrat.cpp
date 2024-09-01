@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-std::ostream& operator<<(std::ostream& o, const Bureaucrat obj)
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& obj)
 {
 	o << obj.get_name() << ", bureaucrat grade " << obj.get_grade() << " .";
 	return o;
@@ -58,7 +58,7 @@ const std::string	Bureaucrat::get_name() const
 
 int			Bureaucrat::get_grade() const
 {
-	return grade_;
+	return this->grade_;
 }
 
 void			Bureaucrat::decrement_g()

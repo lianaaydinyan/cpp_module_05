@@ -7,7 +7,7 @@ AForm& AForm::operator=(const AForm &copy) // ?
 	return *this;
 }
 
-AForm::AForm(const AForm& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_exec_(obj.grade_exec_) , grade_sign_(obj.grade_sign_)
+AForm::AForm(const AForm& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_sign_(obj.grade_sign_), grade_exec_(obj.grade_exec_)
 {
 }
 
@@ -79,7 +79,7 @@ bool AForm::get_status() const
 }
 
 
-std::ostream& operator<<(std::ostream& oo, AForm& obj)
+std::ostream& operator<<(std::ostream& oo,const AForm& obj)
 {
 	oo << obj.get_namee() << " Form have " << obj.get_status() << " state ^_^ " << std::endl;
 	oo << obj.get_grade_e() << " grade to execute, " << obj.get_grade_s() << " grade to sing ." << std::endl; 

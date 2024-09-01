@@ -7,7 +7,7 @@ Form& Form::operator=(Form &copy) // ?
 	return *this;
 }
 
-Form::Form(Form& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_exec_(obj.grade_exec_) , grade_sign_(obj.grade_sign_)
+Form::Form(Form& obj) : name_(obj.name_), is_signed_(obj.is_signed_), grade_sign_(obj.grade_sign_), grade_exec_(obj.grade_exec_)
 {
 }
 
@@ -36,7 +36,7 @@ Form::Form() : name_("default") , is_signed_(false) , grade_sign_(77), grade_exe
 	std::cout << "Default Form constructor called " << std::endl;
 }
 
-Form::Form(const std::string name,const int grade_exec, const int grade_sign) : name_(name) , is_signed_(false) ,grade_exec_(grade_exec) , grade_sign_(grade_sign)
+Form::Form(const std::string name,const int grade_exec, const int grade_sign) : name_(name) , is_signed_(false), grade_sign_(grade_sign) ,grade_exec_(grade_exec)
 {
 	// checking
 	if (grade_exec < 1 )
@@ -72,12 +72,12 @@ const int& Form::get_grade_s() const
 	return this->grade_sign_;
 }
 
-bool& Form::get_status() 
+bool Form::get_status() const 
 {
 	return is_signed_;
 }
 
-std::ostream& operator<<(std::ostream& oo, Form& obj)
+std::ostream& operator<<(std::ostream& oo,const Form& obj)
 {
 	oo << obj.get_name() << " Form have " << obj.get_status() << " state ^_^ " << std::endl;
 	oo << obj.get_grade_e() << " grade to execute, " << obj.get_grade_s() << " grade to sing ." << std::endl; 

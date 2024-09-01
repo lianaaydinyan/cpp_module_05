@@ -18,7 +18,7 @@ class Form
 		Form(const std::string name, const int grade_exec, const int grade_sign) ; // done 
 		const std::string&	get_name( void ) const; // done
 		const int&			get_grade_s( void ) const; // done 
-		bool&				get_status( void ); // done 
+		bool				get_status( void ) const; // done 
 		const int&			get_grade_e( void ) const; // done
 		void				beSigned(Bureaucrat& obj) ; // ?
         class GradeTooHighException
@@ -31,6 +31,6 @@ class Form
         };
 };
 
-std::ostream& operator<<(std::ostream& oo, Form& obj);
+std::ostream& operator<<(std::ostream& oo, const Form& obj);
 
 #endif

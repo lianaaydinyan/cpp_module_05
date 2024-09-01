@@ -22,6 +22,7 @@ int main()
     {
         Form forma("Report", 99, 99);
         obj1.signForm(forma);
+		std::cout << forma << std::endl;
     }
     catch(const std::exception& e)
     {

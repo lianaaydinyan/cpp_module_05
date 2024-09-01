@@ -33,6 +33,6 @@ class AForm
 		virtual ~AForm(); // done
 };
 
-std::ostream& operator<<(std::ostream& oo, AForm& obj);
+std::ostream& operator<<(std::ostream& oo, const AForm& obj);
 
 #endif

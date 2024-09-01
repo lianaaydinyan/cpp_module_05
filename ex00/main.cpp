@@ -3,10 +3,10 @@
 int main()
 {
 
-	Bureaucrat obj1("bb", 151);
+	Bureaucrat obj1("bb", 149);
 	try
 	{
-		Bureaucrat obj2("bb", 151);
+		Bureaucrat obj2("bb", 150);
 	}
 	catch (const std::exception& e)
 	{

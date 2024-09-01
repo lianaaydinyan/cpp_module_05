@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-std::ostream& operator<<(std::ostream& o, const Bureaucrat obj)
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& obj)
 {
 	o << obj.get_name() << ", bureaucrat grade " << obj.get_grade() << " .";
 	return o;
@@ -57,7 +57,7 @@ const std::string	Bureaucrat::get_name() const
 	return this->name_;
 }
 
-const int			Bureaucrat::get_grade() const
+int			Bureaucrat::get_grade() const
 {
 	return grade_;
 }

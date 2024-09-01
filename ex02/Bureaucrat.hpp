@@ -27,7 +27,7 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& obj);
 		Bureaucrat& operator=(const Bureaucrat& obj);
 		const std::string	get_name() const;
-		const int					get_grade() const;
+		int					get_grade() const;
 		void				decrement_g(); // ++grade_
 		void				increment_g(); // --grade_
 		// for Form
@@ -37,6 +37,6 @@ class Bureaucrat
 
 };
 
-std::ostream& operator<<(std::ostream& o, const Bureaucrat obj);
+std::ostream& operator<<(std::ostream& o, const Bureaucrat& obj);
 
 #endif // Bureaucrat_hpp
