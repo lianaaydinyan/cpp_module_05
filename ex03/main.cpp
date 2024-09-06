@@ -8,11 +8,12 @@ int main()
 {
     {
     Intern someRandomIntern;
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");  
+    // rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");  
+    // AForm* makeForm(const std::string& form_name, const std::string& form_target);
+    AForm* rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    std::cout << rrf->get_namee() << std::endl;
     }
-
-    Bureaucrat chlp("document", 3);
+    Bureaucrat chlp("document", 47);
     std::cout << chlp.get_name() << std::endl;
     ShrubberyCreationForm form1(chlp.get_name());
     chlp.signForm(form1);

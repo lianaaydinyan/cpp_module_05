@@ -32,7 +32,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     if (!this->get_status() || (executor.get_grade() > this->get_grade_s()))
         throw DoesItSign();
     std::string file_name = this->target +  "_shrubbery";
-    file.open(file_name,std::ios::out);
+    file.open((this->target + "_shrubbery").c_str(), std::ios::out);
     if (!file)
         throw std::runtime_error("Cant open file");
     file << "            ***              \n";
